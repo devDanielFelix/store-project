@@ -1,13 +1,18 @@
-import Logo from "./Components/Logo";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Layout from "./Pages/Layout";
 import HomePage from "./Pages/HomePage";
+import ProductListingPage from "./Pages/ProductListingPage";
 
 function App() {
   return (
-    <>
-      <Logo />
-      <Logo color="black" />
-      <HomePage />
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route element={<Layout />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="product" element={<ProductListingPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
